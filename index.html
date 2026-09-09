@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigFatHondu — The Official Roast & Prank Headquarters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Lighting Effects -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Confetti Container -->
+  <div id="confettiContainer"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <a href="#" class="nav-brand">👑 BigFatHondu</a>
+    <div class="nav-actions">
+      <button id="soundToggleBtn" class="nav-btn" onclick="toggleSound()">🔊 Sound: ON</button>
+      <a href="#mini-game" class="nav-btn">🎮 Play Game</a>
+      <a href="#multiverse" class="nav-btn">📸 Multiverse</a>
+      <button class="nav-btn danger" onclick="triggerEmergency()">🚨 DON'T PRESS</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="warning-badge">⚠️ High Gravity Zone • Enter At Your Own Risk</div>
+      <h1 class="hero-title">BigFatHondu</h1>
+      <p class="hero-subtitle">
+        The Legend. The Myth. The Man Who Bends Space-Time, Car Suspensions, and All-You-Can-Eat Buffets.
+      </p>
+
+      <!-- Featured Card -->
+      <div class="hero-card">
+        <div class="hero-img-box">
+          <img src="images/PXL_20251207_053333820.LONG_EXPOSURE-02.ORIGINAL.jpg" alt="BigFatHondu at the Beach" class="hero-img" loading="eager" />
+          <div class="img-badge">👑 FINAL BOSS ERA (2025)</div>
+        </div>
+        <div class="hero-info">
+          <h2>Siddharth "Hondu"</h2>
+          <p class="hero-aka">aka The Human Tsunami • Chief Food Inspector</p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-label">Belly Capacity</div>
+              <div class="stat-val">Unlimited GB</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Diet Status</div>
+              <div class="stat-val">Starts Tomorrow</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Puma Hoodie</div>
+              <div class="stat-val">3XL Heavy Duty</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Jawline Visibility</div>
+              <div class="stat-val">404 Not Found 🚫</div>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#roast-machine" class="primary-btn">🔥 Roast Hondu Now</a>
+            <a href="#mini-game" class="secondary-btn">🎮 Feed Hondu Game</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- The Honduverse Multiverse & Timeline -->
+    <section class="section" id="multiverse">
+      <div class="section-header">
+        <div class="section-tag">Cinematic Multiverse</div>
+        <h2 class="section-title">The Hondu Multiverse Vault</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">From aerodynamic neck miracles to superhero buffet defenders.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- New Photo 1: No Chin Hondu -->
+        <article class="photo-card highlight">
+          <div class="photo-frame">
+            <img src="images/No_Chin_Hondu.jpg" alt="No Chin Hondu" loading="lazy" />
+            <span class="photo-era-tag prank">🚨 404: CHIN NOT FOUND</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Aerodynamic No-Chin</h3>
+            <p class="photo-roast">Notice the direct highway connection from lower lip to collarbone. Zero wind resistance. Built like an aerodynamic thumb with a mustache. NASA is still searching for the jawline.</p>
+            <div class="photo-stats">
+              <span>Chin Angle: 180° Flat</span>
+              <span>Neck Merge: 100%</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- New Photo 2: Stylish Hondu -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/stylish_Hondu.jpg" alt="Stylish Studio Hondu" loading="lazy" />
+            <span class="photo-era-tag modern">✨ Vogue Studio Edition</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The GQ Pensive Model</h3>
+            <p class="photo-roast">Dramatic B&W studio lighting and a silver chain. Bro is literally holding his chin with his hand just to prove to the photographer that one still exists. Deeply contemplating butter chicken.</p>
+            <div class="photo-stats">
+              <span>Posing Budget: ₹5,000</span>
+              <span>Thought: "Biryani"</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- New Photo 3: LGBTQ Superhero Hondu -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/LGBTQ_Hondu.png" alt="Superhero LGBTQ Hondu" loading="lazy" />
+            <span class="photo-era-tag rainbow">🌈 Multiverse Defender</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">Captain Rainbow Belly</h3>
+            <p class="photo-roast">The superhero the city didn't ask for and couldn't afford to feed! Clad in rainbow steel with a heart of pure desi ghee. Superpower: Inhaling entire dessert counters in a single bound.</p>
+            <div class="photo-stats">
+              <span>Armor: 4XL Kevlar</span>
+              <span>Buffet Defense: S-Tier</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 4: Night Car Pose -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/20251210_111417-IMG_STYLE.jpg" alt="Hondu with Car at Night" loading="lazy" />
+            <span class="photo-era-tag modern">2025 • Boss Entry</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">Suspension Stress Test</h3>
+            <p class="photo-roast">Arms crossed. Car tilted 15 degrees to the left. The automobile suspension engineers immediately filed an emergency insurance claim.</p>
+            <div class="photo-stats">
+              <span>Car Tilt: 15°</span>
+              <span>Swag: 10,000 HP</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 5: Beach Puma Hoodie -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20251207_053333820.LONG_EXPOSURE-02.ORIGINAL.jpg" alt="Hondu at Beach Puma Hoodie" loading="lazy" />
+            <span class="photo-era-tag modern">2025 • Beach Bae</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Beach Tsunami</h3>
+            <p class="photo-roast">Ocean tides didn't rise because of lunar gravity. High tide started the exact second Hondu dipped his foot in the water wearing his Puma hoodie.</p>
+            <div class="photo-stats">
+              <span>Tsunami Risk: Severe</span>
+              <span>Puma: Stretched</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 6: 2019 Kurta -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/IMG_20190901_124923_1.jpg" alt="Hondu in Clothing Store" loading="lazy" />
+            <span class="photo-era-tag vintage">2019 • Bargain King</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The ₹200 Kurta Mogul</h3>
+            <p class="photo-roast">Caught red-handed inspecting the ₹200 discount rack like a Wall Street investor negotiating multi-million dollar real estate deals.</p>
+            <div class="photo-stats">
+              <span>Budget: ₹200</span>
+              <span>Confidence: 100%</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 7: 2019 Dog -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/IMG_20190209_131400.jpg" alt="Hondu with Dog" loading="lazy" />
+            <span class="photo-era-tag vintage">2019 • Dog Whisperer</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Canine Anchor</h3>
+            <p class="photo-roast">The golden retriever was actually holding him down so the coastal breeze wouldn't blow the lightweight 2019 Hondu into low-Earth orbit.</p>
+            <div class="photo-stats">
+              <span>Snack Shared: 0%</span>
+              <span>Survival: 100%</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 8: 2019 Bike -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/IMG_20190423_120847~2.jpg" alt="Hondu 2019 Smirk" loading="lazy" />
+            <span class="photo-era-tag vintage">2019 • Beta Version</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Bike Boy Smirk</h3>
+            <p class="photo-roast">Ancient archival footage from when a jawline actually existed. A single packet of chips could sustain him for a full week.</p>
+            <div class="photo-stats">
+              <span>Weight: 55 kg</span>
+              <span>Threat Level: Low</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Infinite Roast & Pun Generator -->
+    <section class="section" id="roast-machine">
+      <div class="section-header">
+        <div class="section-tag">AI Roast Protocol</div>
+        <h2 class="section-title">The Hondu Roast Generator</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Freshly baked, 100% organic friend-to-friend roasts from the archive.</p>
+      </div>
+
+      <div class="roast-box" id="roastCard">
+        <div class="roast-quote-icon">“</div>
+        <div class="roast-text" id="roastText">Loading today's prime cut roast...</div>
+        <div class="roast-buttons">
+          <button class="primary-btn" onclick="generateRoast()">🔥 Next Roast</button>
+          <button class="secondary-btn" id="copyRoastBtn" onclick="copyCurrentRoast()">📋 Copy Roast to Send</button>
+          <button class="secondary-btn" onclick="speak(document.getElementById('roastText').textContent)">📢 Read Aloud</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Mini-Game: Feed BigFatHondu -->
+    <section class="section" id="mini-game">
+      <div class="section-header">
+        <div class="section-tag">Arcade Arena</div>
+        <h2 class="section-title">Feed BigFatHondu! 🍔</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+          Catch fast food to <b>EXPAND HONDU'S HEAD</b>! Beware: <b>DODGE</b> the broccoli and salad!
+        </p>
+      </div>
+
+      <div class="game-container">
+        <div class="game-header">
+          <div class="game-stat">Calories: <span id="gameScore">0</span></div>
+          <div class="game-stat">Time Left: <span id="gameTimer">30s</span></div>
+        </div>
+
+        <div id="chinStatusBadge" class="chin-tier-badge">CHIN: 404 NOT FOUND (Base)</div>
+
+        <div class="game-board" id="gameBoard">
+          <!-- Zoomed-in No-Chin Player Head -->
+          <div class="game-player" id="gamePlayer"></div>
+        </div>
+
+        <div class="game-controls">
+          <button class="primary-btn" id="gameStartBtn" onclick="startGame()">▶️ Start Eating (30s Rapid Fire)</button>
+          <div class="game-status" id="gameStatus">Use Mouse, Touch Drag, or Arrow Keys (← / →) to move Hondu!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hondu Soundboard -->
+    <section class="section" id="soundboard">
+      <div class="section-header">
+        <div class="section-tag">Audio FX</div>
+        <h2 class="section-title">The Hondu Soundboard</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Click buttons to trigger custom synthesizers & voice lines!</p>
+      </div>
+
+      <div class="soundboard-grid">
+        <button class="sound-btn" onclick="playHonk()">
+          <span class="sound-icon">📯</span>
+          <span class="sound-label">Honk Hondu</span>
+        </button>
+
+        <button class="sound-btn" onclick="playCreak()">
+          <span class="sound-icon">🚗</span>
+          <span class="sound-label">Suspension Creak</span>
+        </button>
+
+        <button class="sound-btn" onclick="playNom()">
+          <span class="sound-icon">🤤</span>
+          <span class="sound-label">Nom Nom Nom</span>
+        </button>
+
+        <button class="sound-btn" onclick="playBoing()">
+          <span class="sound-icon">🏀</span>
+          <span class="sound-label">Belly Boing</span>
+        </button>
+
+        <button class="sound-btn" onclick="playBuzzer()">
+          <span class="sound-icon">🥦</span>
+          <span class="sound-label">Salad Alarm</span>
+        </button>
+
+        <button class="sound-btn" onclick="speak('Alert! Chin sold separately. 404 error, only neck found!')">
+          <span class="sound-icon">🔍</span>
+          <span class="sound-label">"Chin 404 Alert"</span>
+        </button>
+
+        <button class="sound-btn" onclick="speak('Diet starts tomorrow! Absolutely definitely tomorrow!')">
+          <span class="sound-icon">🗣️</span>
+          <span class="sound-label">"Diet Starts Tomorrow"</span>
+        </button>
+
+        <button class="sound-btn" onclick="speak('Hold my chin with both hands before it completely escapes!')">
+          <span class="sound-icon">📸</span>
+          <span class="sound-label">"Hold My Chin!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="speak('Captain Rainbow Belly, assemble at the buffet counter!')">
+          <span class="sound-icon">🌈</span>
+          <span class="sound-label">"Captain Rainbow"</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Rate Hondu's Aura: Community Poll -->
+    <section class="section" id="poll">
+      <div class="section-header">
+        <div class="section-tag">Community Survey</div>
+        <h2 class="section-title">Rate Hondu's Aura</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">What is BigFatHondu's greatest superpower?</p>
+      </div>
+
+      <div class="poll-box">
+        <!-- Option 0 -->
+        <div class="poll-option">
+          <div class="poll-option-top">
+            <span>🍕 Inhaling an entire pizza in 45 seconds</span>
+            <span class="poll-pct" id="poll-pct-0">0%</span>
+          </div>
+          <div class="poll-progress-bg">
+            <div class="poll-progress-bar" id="poll-bar-0"></div>
+          </div>
+          <button class="poll-vote-btn" id="poll-btn-0" onclick="votePoll(0)">Vote</button>
+        </div>
+
+        <!-- Option 1 -->
+        <div class="poll-option">
+          <div class="poll-option-top">
+            <span>🚗 Bending car suspensions by merely leaning</span>
+            <span class="poll-pct" id="poll-pct-1">0%</span>
+          </div>
+          <div class="poll-progress-bg">
+            <div class="poll-progress-bar" id="poll-bar-1"></div>
+          </div>
+          <button class="poll-vote-btn" id="poll-btn-1" onclick="votePoll(1)">Vote</button>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="poll-option">
+          <div class="poll-option-top">
+            <span>🔍 Aerodynamic seamless neck with 0% chin resistance</span>
+            <span class="poll-pct" id="poll-pct-2">0%</span>
+          </div>
+          <div class="poll-progress-bg">
+            <div class="poll-progress-bar" id="poll-bar-2"></div>
+          </div>
+          <button class="poll-vote-btn" id="poll-btn-2" onclick="votePoll(2)">Vote</button>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="poll-option">
+          <div class="poll-option-top">
+            <span>🌈 Captain Rainbow Belly defending the dessert buffet</span>
+            <span class="poll-pct" id="poll-pct-3">0%</span>
+          </div>
+          <div class="poll-progress-bg">
+            <div class="poll-progress-bar" id="poll-bar-3"></div>
+          </div>
+          <button class="poll-vote-btn" id="poll-btn-3" onclick="votePoll(3)">Vote</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with maximum love, biryani & laughs for <b>Siddharth</b> aka <b>BigFatHondu</b> <span class="heart">❤️</span></p>
+      <p style="font-size: 0.8rem; color: #555;">No Hondus or car suspensions were permanently harmed in the making of this site.</p>
+    </footer>
+
+  </div>
+
+  <!-- FULLSCREEN GAME-OVER NO-CHIN PRANK JUMPSCARE MODAL -->
+  <div class="no-chin-modal" id="noChinPrankModal">
+    <div class="no-chin-content">
+      <div class="prank-alert-badge">🚨 CRITICAL CHIN SCAN FAILURE 🚨</div>
+      
+      <div class="prank-hero-image-wrap">
+        <img src="images/No_Chin_Hondu.jpg" alt="No Chin Hondu Prank" class="prank-hero-image" />
+      </div>
+
+      <h2 class="prank-title">404: JAWLINE NOT FOUND</h2>
+      <div class="prank-score" id="prankScoreDisplay">0 Calories Consumed!</div>
+
+      <div class="prank-roast-box" id="prankRoastText">
+        "Scientists scanned with satellite radar: ZERO CHIN DETECTED. ONLY NECK."
+      </div>
+
+      <div class="prank-actions">
+        <button class="primary-btn" onclick="closeNoChinPrank(); startGame();">🔄 Feed Hondu More</button>
+        <button class="secondary-btn" onclick="closeNoChinPrank()">🤣 Accept The Chinless Reality</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emergency Siren Modal Overlay -->
+  <div class="siren-overlay" id="sirenOverlay">
+    <div class="siren-box">
+      <h2>🚨 RED ALERT 🚨</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 1rem;">CRITICAL HONDU OVERLOAD DETECTED!</p>
+      <p style="color: #aaa; margin-bottom: 1.5rem;">Maximum gravity detected in the vicinity. Evacuate all samosas, burgers, and biryani immediately!</p>
+      <button class="primary-btn" onclick="document.getElementById('sirenOverlay').classList.remove('active')">Acknowledge Hondu</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
