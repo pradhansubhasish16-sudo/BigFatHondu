@@ -30,7 +30,7 @@ Generate a raw, highly structured CLAUDE.md containing sections: Core Architectu
 Prompt 1: Parody Layout and Morph Slider
 Hero Section ("The Physics of Displacement"):
 
-Headline: "SIDDHANT SAGAR: MAXIMUM DISPLACEMENT."
+Headline: "SIDHANT SAGAR: MAXIMUM DISPLACEMENT."
 
 Sub-headline: "A chronicle of caloric triumphs, heavy-duty fabrics, and the unstoppable emergence of BigFatHondu."
 
@@ -48,7 +48,7 @@ The "Mass Spectrometer" Comparison Slider:
 
 Container holding two overlapping images with identical aspect ratios:
 
-Foreground Image: assets/thin_kurta.jpg (Vintage Era: Slim Siddhant)
+Foreground Image: assets/thin_kurta.jpg (Vintage Era: Slim Sidhant)
 
 Background Image: assets/bulk_car.jpg (Modern Era: BigFatHondu)
 
@@ -160,7 +160,7 @@ Button: "Request New Appraisal."
 
 Cycles randomly through 12 curated roasts:
 
-"Siddhant did not gain weight; he expanded his surface area to absorb more cosmic energy."
+"Sidhant did not gain weight; he expanded his surface area to absorb more cosmic energy."
 
 "In 2019, he could slide through turnstiles sideways. Today, turnstiles request advance notice."
 
