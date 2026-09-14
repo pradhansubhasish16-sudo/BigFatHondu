@@ -1,0 +1,51 @@
+# ==========================================
+# Git Ignore Rules for BigFatHondu Project
+# ==========================================
+
+# 1. Secrets & Environment Variables (CRITICAL)
+# Never push actual API keys to GitHub
+.env
+.env*.local
+*.env
+
+# Allow the example template so others know which keys are needed
+!.env.example
+
+# 2. Dependency Directories
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+
+# 3. Debug & Runtime Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 4. OS Specific Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# 5. IDE & Editor Metadata
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 6. Temporary & Cache Files
+.cache/
+tmp/
+temp/

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumendra Padhy ("Lawyerpady") — Section 420 Street Counsel & Tareekh Master</title>
+  <link rel="stylesheet" href="../../shared/css/shared.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Blue and Gold Glows -->
+  <div class="bg-glow-1" style="background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Confetti Container -->
+  <div id="confettiContainer"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <a href="../../index.html" class="nav-brand blue-brand">⚖️ The Padhyverse</a>
+    <div class="nav-actions">
+      <a href="../../index.html" class="nav-btn home-btn">⬅️ Gang Hub</a>
+      <div class="accent-selector-wrap" title="Powered by ElevenLabs High-Fidelity Voice Clones">
+        <span class="accent-label">🎙️ Voice:</span>
+        <span style="color: #60a5fa; font-weight: 700; font-size: 0.82rem;">⚡ ElevenLabs HD</span>
+      </div>
+      <button id="soundToggleBtn" class="nav-btn" onclick="toggleSound()">🔊 Sound: ON</button>
+      <a href="../hondu/index.html" class="nav-btn">🍔 Hondu</a>
+      <a href="../aswini/index.html" class="nav-btn green-btn">🪙 Aswini</a>
+      <a href="#court-game" class="nav-btn" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border-color: rgba(59, 130, 246, 0.4);">🎮 Tareekh Game</a>
+      <button class="nav-btn danger" onclick="triggerObjection()">🚨 OBJECTION!</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <header class="padhy-hero">
+      <div class="badge-tag blue">⚖️ Supreme Court of Street Arguments • The Tareekh-Pe-Tareekh Specialist • 2026 Audit</div>
+      <h1 class="padhy-title">Soumendra "Lawyerpady"</h1>
+      <p class="hero-subtitle">
+        The Man In Constant Search Of Clients. The Legal Mastermind Who Delays Hearings Decade After Decade For Regular Income. Warning: Anyone Who Hires Padhy Is Actually A Victim Of Padhy.
+      </p>
+
+      <!-- Featured Showcase Card -->
+      <div class="padhy-card">
+        <div class="padhy-img-box">
+          <img src="images/PXL_20250830_151644484.MP.jpg" alt="Soumendra Padhy" class="padhy-img" loading="eager" />
+          <div class="gavel-badge">⚖️ SECTION 420 COUNSEL (2026)</div>
+        </div>
+        <div class="padhy-info">
+          <h2>Soumendra Padhy</h2>
+          <p style="color: #60a5fa; font-size: 1rem; font-weight: 700; margin-bottom: 1.2rem;">
+            aka "Lawyerpady" • Senior Advocate of Endless Adjournments
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-label">Client Hunt Status</div>
+              <div class="stat-val" style="color: #f9cb28;">Hunting at Chai Tapri ☕</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Adjournment Philosophy</div>
+              <div class="stat-val" style="color: #60a5fa;">Tareekh Pe Tareekh 📅</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Earning Strategy</div>
+              <div class="stat-val">₹500 Per Delayed Date</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Client Safety Rating</div>
+              <div class="stat-val" style="color: #ff416c;">0% (Client Is Victim) 🚨</div>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#court-game" class="primary-btn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">🎮 Play Tareekh Pe Tareekh</a>
+            <a href="#roast-machine" class="secondary-btn">🔥 Cross-Examine Padhy</a>
+            <button class="secondary-btn" onclick="generateAdjournmentExcuse()">📜 Get Delay Excuse</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Courtroom Arcade Game: TAREEKH PE TAREEKH! -->
+    <section class="section" id="court-game">
+      <div class="section-header">
+        <div class="section-tag" style="color: #f9cb28;">Judicial Simulation</div>
+        <h2 class="section-title">TAREEKH PE TAREEKH! (The Endless Hearing Game) ⚖️</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+          Control Padhy to catch <b>📅 Next Dates</b>, <b>📂 Lost File Excuses</b> & <b>🤝 New Clients</b>! <b>DODGE 🔨 Judge's Final Verdict</b> & <b>🚨 Contempt Notices</b>!
+        </p>
+      </div>
+
+      <div class="court-game-container">
+        <div class="court-game-header">
+          <div class="court-game-stat">Consultation Billed: <span id="courtGameEarnings">₹0.00</span></div>
+          <div class="court-game-stat">Dates Milked: <span id="courtGameTareekhs">0 Dates</span></div>
+          <div class="court-game-stat">Time Left: <span id="courtGameTimer">30s</span></div>
+        </div>
+
+        <div class="patience-bar-wrap">
+          <div class="patience-label">
+            <span>Judge's Patience Level:</span>
+            <span id="patienceText">100% Patience</span>
+          </div>
+          <div class="patience-track">
+            <div class="patience-fill" id="patienceFill" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <div class="court-game-board" id="courtGameBoard">
+          <div class="padhy-player" id="padhyPlayer"></div>
+        </div>
+
+        <div class="game-controls">
+          <button class="primary-btn" id="courtGameStartBtn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" onclick="startCourtGame()">
+            ▶️ Start Milking Hearing (30s Trial)
+          </button>
+          <div class="game-status" id="courtGameStatus">
+            Move Padhy with Mouse, Touch Drag, or Arrow Keys (← / →). Don't let the Judge pass a verdict!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outrageous Adjournment Excuse Generator -->
+    <section class="section" id="excuse-generator">
+      <div class="section-header">
+        <div class="section-tag" style="color: #60a5fa;">Procedural Tactics</div>
+        <h2 class="section-title">The Tareekh-o-Meter: Excuse Generator 📜</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Need to postpone a hearing to bill the client another ₹500? Generate a bulletproof excuse for the judge.</p>
+      </div>
+
+      <div class="excuse-box">
+        <div style="font-size: 2.2rem; color: #f9cb28; margin-bottom: 0.5rem;">⚖️</div>
+        <div class="excuse-text" id="excuseDisplay">
+          "Milord, the original receipt of the disputed ₹10 samosa is currently undergoing carbon-dating in a Swiss laboratory. Please grant a hearing in 2035."
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button class="primary-btn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" onclick="generateAdjournmentExcuse()">
+            🎲 Generate Today's Excuse
+          </button>
+          <button class="secondary-btn" onclick="playVoice(document.getElementById('excuseDisplay').textContent, 'padhy')">
+            📢 Plead In Court (Read Aloud)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Padhy's Client Milking Rate Card -->
+    <section class="section" id="tariff">
+      <div class="section-header">
+        <div class="section-tag" style="color: #10b981;">Commercial Retainer</div>
+        <h2 class="section-title">Padhy's Client Milking Tariff Card 🧾</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">How Padhy turns a 10-rupee street misunderstanding into a 25-year generational revenue stream.</p>
+      </div>
+
+      <div class="tariff-grid">
+        <div class="tariff-card">
+          <div class="tariff-action">☕ Street Chai Scout Retainer</div>
+          <div class="tariff-fee">₹1,500 Upfront</div>
+          <div class="tariff-detail">Listening to you complain about your neighbor's loud television and convincing you it's a Supreme Court matter.</div>
+        </div>
+
+        <div class="tariff-card">
+          <div class="tariff-action">📅 Requesting Next Date ("Tareekh")</div>
+          <div class="tariff-fee">₹500 / Appearance</div>
+          <div class="tariff-detail">Showing up for 45 seconds, asking the judge for next month's date with puppy eyes, and texting client for payment.</div>
+        </div>
+
+        <div class="tariff-card">
+          <div class="tariff-action">🤧 Staged Coughing Fit Delay</div>
+          <div class="tariff-fee">₹750 / Session</div>
+          <div class="tariff-detail">Dramatically coughing when the judge is about to conclude the trial, securing an emergency 3-week medical postponement.</div>
+        </div>
+
+        <div class="tariff-card">
+          <div class="tariff-action">📂 "Paperwork Misplaced" Surcharge</div>
+          <div class="tariff-fee">₹400 / Excuse</div>
+          <div class="tariff-detail">Pretending your junior left the critical file on an auto-rickshaw, guaranteeing a 14-day discovery delay.</div>
+        </div>
+
+        <div class="tariff-card">
+          <div class="tariff-action">🚨 Shouting "Objection Your Honor!"</div>
+          <div class="tariff-fee">₹600 / Shout</div>
+          <div class="tariff-detail">Shouting objection with zero legal grounds just to impress the client sitting in the gallery.</div>
+        </div>
+
+        <div class="tariff-card" style="border-color: #e63946; background: rgba(230, 57, 70, 0.08);">
+          <div class="tariff-action" style="color: #ff6b6b;">🚫 Actually Winning The Case</div>
+          <div class="tariff-fee" style="color: #ff6b6b;">NOT OFFERED</div>
+          <div class="tariff-detail">STRICTLY FORBIDDEN! If the case ends, the monthly ₹500 fee stops. Dispute must continue until retirement.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence Vault Gallery -->
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <div class="section-tag" style="color: #60a5fa;">Courtroom Exhibits</div>
+        <h2 class="section-title">The Padhy Case Dossier 📸</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Photographic evidence submitted to the jury under penalty of endless debate.</p>
+      </div>
+
+      <div class="timeline-grid">
+        
+        <!-- Exhibit 1 -->
+        <article class="photo-card highlight">
+          <div class="photo-frame">
+            <img src="images/PXL_20250830_151644484.MP.jpg" alt="Padhy Supreme" loading="lazy" />
+            <span class="photo-era-tag" style="background: rgba(59, 130, 246, 0.9); color: white;">⚖️ EXHIBIT A</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Supreme Court Contemplation</h3>
+            <p class="photo-roast">Caught reviewing imaginary case files in broad daylight. Bro is calculating how many loop-holes he can exploit to delay the hearing until the next decade.</p>
+            <div class="photo-stats">
+              <span>Client Safety: In Peril</span>
+              <span>Next Date: November 2039</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Exhibit 2 -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20251206_120330130.NIGHT.jpg" alt="Padhy Night Ops" loading="lazy" />
+            <span class="photo-era-tag modern">🌙 NIGHT ARRAIGNMENT</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">Midnight Client Scouting Ops</h3>
+            <p class="photo-roast">Roaming the streets after midnight looking for someone having a mild disagreement so he can sign them up as his next billable victim.</p>
+            <div class="photo-stats">
+              <span>Victims Targeted: 4</span>
+              <span>Retainer Demanded: ₹500</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Exhibit 3 -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20241108_234823807.NIGHT.jpg" alt="Padhy Night Argument" loading="lazy" />
+            <span class="photo-era-tag vintage">📜 2024 PROCEEDINGS</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Pre-Trial Cross-Examination</h3>
+            <p class="photo-roast">Testing his defense arguments against the cold night air. The air pleaded guilty and paid ₹300 consultation fees after 20 minutes of shouting.</p>
+            <div class="photo-stats">
+              <span>Shouting Speed: 420 wpm</span>
+              <span>Evidence: None Needed</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Exhibit 4 -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/20210907_232228.jpg" alt="Padhy 2021" loading="lazy" />
+            <span class="photo-era-tag vintage">⏳ 2021 ARCHIVES</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">Junior Counsel Origins</h3>
+            <p class="photo-roast">Vintage archival evidence from 2021 when he first realized that if you keep asking the judge for dates, you never have to prepare for the actual trial.</p>
+            <div class="photo-stats">
+              <span>Dates Asked: 114</span>
+              <span>Trials Finished: 0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Exhibit 5 -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/FB_IMG_1694442253897.jpg" alt="Padhy Facebook" loading="lazy" />
+            <span class="photo-era-tag prank">💼 BAR COUNCIL PHOTO</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Official Profile of Justice</h3>
+            <p class="photo-roast">The photo bro submits whenever someone asks for proof of his imaginary law firm 'Padhy & Associates: We Delay Until You Pay'.</p>
+            <div class="photo-stats">
+              <span>Bar License: Under Review</span>
+              <span>Swag: Supreme</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Roast Machine -->
+    <section class="section" id="roast-machine">
+      <div class="section-header">
+        <div class="section-tag" style="color: #60a5fa;">Courtroom Testimony</div>
+        <h2 class="section-title">The Lawyerpady Cross-Examination 🔥</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Roasts drafted under oath and notarized by the Gang Council.</p>
+      </div>
+
+      <div class="roast-box" id="padhyRoastCard">
+        <div class="roast-quote-icon">“</div>
+        <div class="roast-text" id="padhyRoastText">Loading cross-examination...</div>
+        <div class="roast-buttons">
+          <button class="primary-btn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" onclick="generatePadhyRoast()">⚖️ Next Objection</button>
+          <button class="secondary-btn" id="copyPadhyRoastBtn" onclick="copyPadhyRoast()">📋 Copy to WhatsApp</button>
+          <button class="secondary-btn" onclick="playVoice(document.getElementById('padhyRoastText').textContent, 'padhy')">📢 Read Aloud</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soundboard -->
+    <section class="section" id="soundboard">
+      <div class="section-header">
+        <div class="section-tag" style="color: #f9cb28;">Courtroom Audio FX</div>
+        <h2 class="section-title">The Padhy Courtroom Soundboard 🔊</h2>
+      </div>
+
+      <div class="soundboard-grid">
+        <button class="sound-btn" onclick="playGavel()">
+          <span class="sound-icon">🔨</span>
+          <span class="sound-label">Gavel Strike</span>
+        </button>
+
+        <button class="sound-btn" onclick="triggerObjection()">
+          <span class="sound-icon">🚨</span>
+          <span class="sound-label">Loud "OBJECTION!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Tareekh pe tareekh! Tareekh pe tareekh mil rahi hai milord!', 'padhy')">
+          <span class="sound-icon">📅</span>
+          <span class="sound-label">"Tareekh Pe Tareekh!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Agla client kaun hai? Ek aur bakra mil gaya, chai samosa sorted!', 'padhy')">
+          <span class="sound-icon">☕</span>
+          <span class="sound-label">"Agla Bakra Mil Gaya!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Order in the court! I demand one plate of mutton biryani as legal settlement!', 'padhy')">
+          <span class="sound-icon">🗣️</span>
+          <span class="sound-label">"Biryani Settlement"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Under section 420, your argument is completely invalid!', 'padhy')">
+          <span class="sound-icon">📜</span>
+          <span class="sound-label">"Section 420 Alert"</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with maximum love, legal notices & laughs for <b>Soumendra Padhy</b> ("Lawyerpady") <span class="heart">❤️</span></p>
+      <p style="font-size: 0.8rem; color: #555;">All clients are treated as prospective victims. All cases adjourned indefinitely.</p>
+    </footer>
+
+  </div>
+
+  <!-- WIN MODAL: CLIENT EXPLOITATION WARNING -->
+  <div class="court-modal" id="clientVictimModal">
+    <div class="court-modal-content">
+      <div class="badge-tag gold" style="font-size: 0.95rem; margin-bottom: 1rem;">🚨 CLIENT EXPLOITATION WARNING 🚨</div>
+      
+      <div class="prank-hero-image-wrap" style="border-color: #f9cb28; box-shadow: 0 0 40px rgba(249, 203, 40, 0.8);">
+        <img src="images/PXL_20250830_151644484.MP.jpg" alt="Padhy Supreme" class="prank-hero-image" />
+      </div>
+
+      <h2 class="prank-title" style="color: #f9cb28;">HEARING ADJOURNED TILL 2042!</h2>
+      <div class="prank-score" id="victimFeeDisplay" style="color: #10b981;">Net Hearing Fee Billed: ₹5.40</div>
+      <div style="color: #60a5fa; font-weight: 800; font-size: 0.95rem; margin-bottom: 1rem;" id="victimTareekhDisplay">
+        18 Dates Postponed!
+      </div>
+
+      <div class="prank-roast-box" style="border-color: rgba(249, 203, 40, 0.4);">
+        <p style="color: #ff6b6b; font-weight: 900; margin-bottom: 0.5rem;">⚠️ OFFICIAL CITIZEN ADVISORY:</p>
+        "Padhy successfully billed his innocent client ₹5.40 for today's 45-second procedural delay! <b>WARNING: THE NEXT CLIENT OF PADHY IS OFFICIALLY A DESIGNATED VICTIM OF PADHY!</b> The dispute over a ₹10 samosa from 2017 is legally secured for another 18 years!"
+      </div>
+
+      <div class="prank-actions">
+        <button class="primary-btn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" onclick="closeCourtModals(); startCourtGame();">
+          🔄 Adjourn Next Hearing (Play Again)
+        </button>
+        <button class="secondary-btn" onclick="closeCourtModals()">
+          🤣 Pay ₹5.40 & Accept Fate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOSE MODAL: JUDGE SCOLDS PADHY -->
+  <div class="court-modal" id="judgeScoldModal">
+    <div class="court-modal-content danger-theme">
+      <div class="badge-tag orange" style="background: #e63946; color: white; margin-bottom: 1rem;">🔨 JUDICIAL CONTEMPT ORDER 🔨</div>
+      
+      <div class="prank-hero-image-wrap" style="border-color: #e63946; box-shadow: 0 0 40px rgba(230, 57, 70, 0.8);">
+        <img src="images/PXL_20241108_234823807.NIGHT.jpg" alt="Padhy Scolded" class="prank-hero-image" />
+      </div>
+
+      <h2 class="prank-title" style="color: #e63946;">CASE DISMISSED WITH PREJUDICE!</h2>
+      <div class="prank-score" style="color: #ff8a65;">Judge's Patience Level: 0% (Total Meltdown)</div>
+
+      <div class="prank-roast-box" style="border-color: rgba(230, 57, 70, 0.5);">
+        <p style="color: #ff8a65; font-weight: 900; margin-bottom: 0.5rem;">🗣️ VERBATIM JUDGE SCOLDING:</p>
+        "MR. PADHY! FOR THE 24TH TIME THIS MONTH, YOU CAME TO COURT UNPREPARED CITING SICK CATS, BROKEN PENS, AND EMOTIONAL TURBULENCE! YOU HAVE WASTED 300 HOURS OF JUDICIAL TIME ON A TEN-RUPEE DISPUTE! RETURN THE CLIENT'S CHAI MONEY AND LEAVE MY COURTROOM IMMEDIATELY!"
+      </div>
+
+      <div class="prank-actions">
+        <button class="primary-btn danger" onclick="closeCourtModals(); startCourtGame();">
+          📜 File Urgent Review Petition (Try Again)
+        </button>
+        <button class="secondary-btn" onclick="closeCourtModals()">
+          🏃 Run Out Of Courtroom 3
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../shared/js/audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aswini Sahoo ("Assini") — The 1-Paisa God & Ultrasonic Megaphone</title>
+  <link rel="stylesheet" href="../../shared/css/shared.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Green and Gold Glows -->
+  <div class="bg-glow-green"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Confetti Container -->
+  <div id="confettiContainer"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <a href="../../index.html" class="nav-brand green-brand">🪙 The Aswiniverse</a>
+    <div class="nav-actions">
+      <a href="../../index.html" class="nav-btn home-btn">⬅️ Gang Hub</a>
+      <div class="accent-selector-wrap" title="Powered by ElevenLabs High-Fidelity Voice Clones">
+        <span class="accent-label">🎙️ Voice:</span>
+        <span style="color: #10b981; font-weight: 700; font-size: 0.82rem;">⚡ ElevenLabs HD</span>
+      </div>
+      <button id="soundToggleBtn" class="nav-btn" onclick="toggleSound()">🔊 Sound: ON</button>
+      <a href="../hondu/index.html" class="nav-btn">🍔 Hondu</a>
+      <a href="../padhy/index.html" class="nav-btn">⚖️ Padhy</a>
+      <a href="#coin-game" class="nav-btn green-btn">🎮 Paisa Game</a>
+      <button class="nav-btn danger" onclick="testDecibelBlast()">📢 SONIC BLAST</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <header class="aswini-hero">
+      <div class="badge-tag green">🪙 The Deity of ₹0.01 Savings • Ultrasonic Voice Protocol • 2026 Audit</div>
+      <h1 class="aswini-title">Aswini "Assini" Sahoo</h1>
+      <p class="hero-subtitle">
+        The Man. The Megaphone. The Deity Who Saves ₹0.01, Walks 18km To Avoid A ₹5 Bus Ticket, and Calls You At 2:30 AM Demanding A 33-Paise UPI Chai Refund.
+      </p>
+
+      <!-- Featured Showcase Card -->
+      <div class="aswini-card">
+        <div class="aswini-img-box">
+          <img src="images/PXL_20260121_085640262.PORTRAIT.jpg" alt="Aswini Sahoo Portrait" class="aswini-img" loading="eager" />
+          <div class="coin-badge">🪙 THE 1-PAISA AVATAR (2026)</div>
+        </div>
+        <div class="aswini-info">
+          <h2>Aswini Sahoo</h2>
+          <p class="aswini-aka">aka "Assini" • Chief Paisa Auditor • The Human Megaphone</p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-label">Financial Philosophy</div>
+              <div class="stat-val" style="color: #f9cb28;">₹0.01 = Life Savings</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Vocal Decibel Peak</div>
+              <div class="stat-val" style="color: #10b981;">145 dB (Sonic Boom)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">UPI Chai Split Speed</div>
+              <div class="stat-val">0.002s (33 Paise)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Subway Napkin Hoard</div>
+              <div class="stat-val">500+ Free Packets</div>
+            </div>
+          </div>
+
+          <div class="cta-group">
+            <a href="#aswini-roast-machine" class="primary-btn green-btn">🔥 Roast Aswini Now</a>
+            <a href="#coin-game" class="primary-btn gold-btn">🪙 Play Paisa Bachao Game</a>
+            <button class="secondary-btn" onclick="testDecibelBlast()">📢 Test Loud Voice</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- The Photographic Audit Vault -->
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <div class="section-tag" style="color: #10b981;">Archival Telemetry</div>
+        <h2 class="section-title">The Aswini Audit Vault 📸</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Declassified photographic evidence of extreme penny-pinching and decibel disruptions.</p>
+      </div>
+
+      <div class="timeline-grid">
+        
+        <!-- Photo 1: CEO of 1-Paisa -->
+        <article class="photo-card highlight">
+          <div class="photo-frame">
+            <img src="images/PXL_20260121_085640262.PORTRAIT.jpg" alt="Aswini Portrait" loading="lazy" />
+            <span class="photo-era-tag" style="background: rgba(16, 185, 129, 0.9); color: #000; font-weight: 900;">👑 CEO OF ₹0.01</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The CEO of ₹0.01 Savings</h3>
+            <p class="photo-roast">That ultra-sharp gaze isn't for corporate mergers. Bro is mentally calculating compound interest on the 10-paise discount he demanded from the vegetable vendor this morning.</p>
+            <div class="photo-stats">
+              <span>Net Saved: ₹0.01</span>
+              <span>Focus: 100% On Wallet</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 2: Megaphone Resonance -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20260121_110954273.PORTRAIT.jpg" alt="Aswini Loud Voice" loading="lazy" />
+            <span class="photo-era-tag" style="background: rgba(230, 57, 70, 0.9); color: white;">📢 145 DECIBELS</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">Ultrasonic Megaphone Peak</h3>
+            <p class="photo-roast">Seconds after this photo was taken, he shouted "ARE BHAI SUN TOH!". Three car alarms went off in the adjacent parking lot, and seismographs in Bhubaneswar registered a tremor.</p>
+            <div class="photo-stats" style="color: #ff8a65;">
+              <span>Volume: Stuck at 500%</span>
+              <span>Earplugs: Mandatory</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 3: Outdoor Recon -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20260118_085204052.jpg" alt="Aswini Scouting" loading="lazy" />
+            <span class="photo-era-tag" style="background: rgba(249, 203, 40, 0.9); color: #000;">🕶️ COUPON RADAR</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Market Discount Recon</h3>
+            <p class="photo-roast">Scanning the market perimeter for unapplied promo codes and buy-one-get-one deals. Can spot a free sample table from 350 meters through heavy fog.</p>
+            <div class="photo-stats" style="color: #f9cb28;">
+              <span>Radar Range: 500m</span>
+              <span>Free Samples Claimed: 14</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 4: Street Vendor Bargain -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/PXL_20250607_090014368.jpg" alt="Aswini Street Stroll" loading="lazy" />
+            <span class="photo-era-tag" style="background: rgba(0, 242, 254, 0.9); color: #000;">🚶 PEDAL HERO</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Auto-Rickshaw Rejector</h3>
+            <p class="photo-roast">When the auto driver quoted ₹40, Aswini scoffed, declared modern transit a capitalist scam, and embarked on a 12-kilometer desert expedition on foot to preserve ₹40.</p>
+            <div class="photo-stats" style="color: #00f2fe;">
+              <span>Auto Saved: ₹40</span>
+              <span>Shoe Depreciation: ₹800</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 5: Classic Era -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/IMG_3345_exported_6990.jpg" alt="Aswini Classic" loading="lazy" />
+            <span class="photo-era-tag vintage">⏳ CLASSIC ERA</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Genesis of Penny Pinching</h3>
+            <p class="photo-roast">Ancient historical archives proving that the passion for saving single-digit paise is genetic. Even back then, his wallet opened slower than dial-up internet in 1998.</p>
+            <div class="photo-stats" style="color: #00f2fe;">
+              <span>Vintage Ledger: Kept</span>
+              <span>Treats Given: Exactly 0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Photo 6: WhatsApp Screenshot Ledger -->
+        <article class="photo-card highlight" style="border-color: #f9cb28; box-shadow: 0 0 25px rgba(249, 203, 40, 0.3);">
+          <div class="photo-frame">
+            <img src="images/Screenshot_2018-05-13-10-56-04-837_com.whatsapp.png" alt="Leaked WhatsApp Ledger" loading="lazy" />
+            <span class="photo-era-tag prank">🧾 FORENSIC AUDIT (2018)</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">The Leaked WhatsApp Ledger</h3>
+            <p class="photo-roast">THE SACRED SCROLL OF 2018! Forensic financial auditing tracking every single rupee and paisa owed by friends since college. The Swiss bank of petty friend debts!</p>
+            <div class="photo-stats" style="color: #f9cb28;">
+              <span>Audit Accuracy: 99.999%</span>
+              <span>Debts Forgiven: Zero</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Aswini Roast Machine -->
+    <section class="section" id="aswini-roast-machine">
+      <div class="section-header">
+        <div class="section-tag" style="color: #10b981;">Automated Financial Roast</div>
+        <h2 class="section-title">The 1-Paisa Roast Machine 🔥</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Handcrafted roasts dedicated to Aswini's deafening decibels & penny-pinching exploits.</p>
+      </div>
+
+      <div class="roast-box" id="aswiniRoastCard">
+        <div class="roast-quote-icon">“</div>
+        <div class="roast-text" id="aswiniRoastText">Loading prime cut 1-paisa roast...</div>
+        <div class="roast-buttons">
+          <button class="primary-btn green-btn" onclick="generateAswiniRoast()">🪙 Next 1-Paisa Roast</button>
+          <button class="secondary-btn" id="copyAswiniRoastBtn" onclick="copyAswiniRoast()">📋 Copy Roast to WhatsApp</button>
+          <button class="secondary-btn" onclick="playVoice(document.getElementById('aswiniRoastText').textContent, 'aswini')">📢 Read Aloud</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ultrasonic Decibel Meter Simulator -->
+    <section class="section" id="decibel-meter">
+      <div class="section-header">
+        <div class="section-tag" style="color: #ff8a65;">Acoustic Telemetry</div>
+        <h2 class="section-title">The Aswini Decibel Meter 📢</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Drag the slider to test the destructive acoustic output of Aswini's vocal cords.</p>
+      </div>
+
+      <div class="decibel-box">
+        <div class="decibel-meter-val" id="decibelVal">145 dB</div>
+        <div class="decibel-warning" id="decibelWarning">Military Jet Afterburner • Permanent hearing loss in 3km radius</div>
+        
+        <input type="range" min="40" max="220" value="145" class="decibel-slider" id="decibelRange" oninput="updateDecibelSlider(this.value)" />
+
+        <div class="decibel-visualizer" id="decibelVisualizer">
+          <!-- 12 Animated Decibel Equalizer Bars -->
+          <div class="decibel-bar" style="height: 35%;"></div>
+          <div class="decibel-bar" style="height: 50%;"></div>
+          <div class="decibel-bar" style="height: 65%;"></div>
+          <div class="decibel-bar" style="height: 80%;"></div>
+          <div class="decibel-bar" style="height: 90%;"></div>
+          <div class="decibel-bar" style="height: 100%;"></div>
+          <div class="decibel-bar" style="height: 95%;"></div>
+          <div class="decibel-bar" style="height: 85%;"></div>
+          <div class="decibel-bar" style="height: 70%;"></div>
+          <div class="decibel-bar" style="height: 55%;"></div>
+          <div class="decibel-bar" style="height: 45%;"></div>
+          <div class="decibel-bar" style="height: 30%;"></div>
+        </div>
+
+        <div style="display: flex; gap: 0.8rem; justify-content: center; margin-top: 1.5rem;">
+          <button class="primary-btn danger" onclick="testDecibelBlast()">📢 Test 185 dB Voice Blast</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-Paisa Arcade Game: PAISA BACHAO! -->
+    <section class="section" id="coin-game">
+      <div class="section-header">
+        <div class="section-tag" style="color: #10b981;">1-Paisa Mini-Game</div>
+        <h2 class="section-title">Save The 1-Paisa Coin! 🪙</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+          Catch <b>₹0.01 coins</b> & <b>free tissue papers</b> to build Aswini's wealth! <b>AVOID</b> Starbucks coffee & splitting dinner bills!
+        </p>
+      </div>
+
+      <div class="game-container">
+        <div class="game-header">
+          <div class="game-stat">Preserved: <span id="coinScore">₹0.00</span></div>
+          <div class="game-stat">Time Left: <span id="coinTimer">30s</span></div>
+        </div>
+
+        <div id="paisaTierBadge" class="paisa-tier-badge">WEALTH TIER: Frugal Mortal (Base)</div>
+
+        <div class="game-board" id="coinGameBoard">
+          <div class="coin-player" id="coinPlayer">
+            <div class="coin-player-label">🪙 Aswini</div>
+          </div>
+        </div>
+
+        <div class="game-controls">
+          <button class="primary-btn green-btn" id="coinGameStartBtn" onclick="startCoinGame()">▶️ Start 1-Paisa Shift (30s)</button>
+          <div class="game-status" id="coinGameStatus">Use Mouse, Touch Drag, or Arrow Keys (← / →) to catch every single paisa!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aswini's Frugality Calculator -->
+    <section class="section" id="calculator">
+      <div class="section-header">
+        <div class="section-tag" style="color: #f9cb28;">Financial Analytics</div>
+        <h2 class="section-title">The ₹0.01 Micro-Savings Audit 🧮</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Calculate how much money you can save by adopting Aswini's extreme lifestyle.</p>
+      </div>
+
+      <div class="aswini-calculator-card">
+        <div class="calc-row">
+          <label>KM Walked To Avoid ₹5 Auto Fare:</label>
+          <input type="number" id="calcKm" value="14" min="0" oninput="calculateSavings()" />
+        </div>
+        <div class="calc-row">
+          <label>Free Ketchup & Tissue Packets Hoarded:</label>
+          <input type="number" id="calcPackets" value="28" min="0" oninput="calculateSavings()" />
+        </div>
+        <div class="calc-row">
+          <label>Chai Bills Split Down To Exactly ₹0.33:</label>
+          <input type="number" id="calcSplits" value="45" min="0" oninput="calculateSavings()" />
+        </div>
+        <div class="calc-row">
+          <label>Unnecessary Fan/AC Switches Angrily Turned Off:</label>
+          <input type="number" id="calcFans" value="18" min="0" oninput="calculateSavings()" />
+        </div>
+
+        <div class="calc-result-box">
+          <div class="calc-result-title">TOTAL WEALTH EXTRACTED FROM FRIENDS:</div>
+          <div class="calc-result-number" id="calcTotalResult">₹147.21</div>
+          <div style="font-size: 0.85rem; color: #aaa; margin-top: 0.4rem;" id="calcTotalSubtext">
+            Equivalent to 14,721 one-paisa copper coins stored under Aswini's pillow.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soundboard -->
+    <section class="section" id="soundboard">
+      <div class="section-header">
+        <div class="section-tag" style="color: #10b981;">Ultrasonic Soundboard</div>
+        <h2 class="section-title">The Aswini Soundboard 🔊</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Click buttons to trigger signature sound bites & ultrasonic exclamations!</p>
+      </div>
+
+      <div class="soundboard-grid">
+        <button class="sound-btn" onclick="playCoin()">
+          <span class="sound-icon">🪙</span>
+          <span class="sound-label">1-Paisa Clink</span>
+        </button>
+
+        <button class="sound-btn" onclick="playChaChing()">
+          <span class="sound-icon">💵</span>
+          <span class="sound-label">Cash Register</span>
+        </button>
+
+        <button class="sound-btn" onclick="playMegaphone()">
+          <span class="sound-icon">📢</span>
+          <span class="sound-label">Ultrasonic Megaphone</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Are bhai sun toh! Balance khatam ho jayega jaldi bol!', 'aswini')">
+          <span class="sound-icon">🗣️</span>
+          <span class="sound-label">"Balance Khatam!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Bill split kar! Paytm par 33 paise bhej jaldi!', 'aswini')">
+          <span class="sound-icon">🧾</span>
+          <span class="sound-label">"33 Paise UPI Kar!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Main pedal chala jaaunga, auto waala 30 rupay maang raha hai!', 'aswini')">
+          <span class="sound-icon">🚶</span>
+          <span class="sound-label">"Main Pedal Jaaunga!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Bhai extra tissue paper aur ketchup packet bag me daal le!', 'aswini')">
+          <span class="sound-icon">🍅</span>
+          <span class="sound-label">"Pack The Ketchup!"</span>
+        </button>
+
+        <button class="sound-btn" onclick="playVoice('Fan kisne chalu chhoda? Bijli ka bill kaun bharega?!', 'aswini')">
+          <span class="sound-icon">⚡</span>
+          <span class="sound-label">"Who Left The Fan On?!"</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with maximum love, 1-paisa coins & laughs for <b>Aswini Sahoo</b> ("Assini") <span class="heart">❤️</span></p>
+      <p style="font-size: 0.8rem; color: #555;">No 1-paisa coins or auto-rickshaw drivers were harmed in the making of this site.</p>
+    </footer>
+
+  </div>
+
+  <!-- GAME OVER / BANKRUPTCY MODAL -->
+  <div class="aswini-prank-modal" id="aswiniPrankModal">
+    <div class="aswini-prank-content">
+      <div class="badge-tag green" style="font-size: 0.95rem; margin-bottom: 1rem;">🪙 PAISA SHIFT COMPLETED 🪙</div>
+      
+      <div class="prank-hero-image-wrap" style="border-color: #10b981; box-shadow: 0 0 40px rgba(16, 185, 129, 0.7);">
+        <img src="images/PXL_20260121_085640262.PORTRAIT.jpg" alt="Aswini Prank" class="prank-hero-image" />
+      </div>
+
+      <h2 class="prank-title" style="color: #10b981;">WEALTH PRESERVED!</h2>
+      <div class="prank-score" id="aswiniPrankScore" style="color: #f9cb28;">₹0.00 Saved in Secret Locker!</div>
+
+      <div class="prank-roast-box" id="aswiniPrankRoast">
+        "DISASTER: Aswini was forced to pay ₹3.50! He has collapsed and is currently demanding ₹3.50 from the nearest bystander."
+      </div>
+
+      <div class="prank-actions">
+        <button class="primary-btn green-btn" onclick="closeAswiniPrank(); startCoinGame();">🔄 Save More Paise</button>
+        <button class="secondary-btn" onclick="closeAswiniPrank()">🤣 Accept The 1-Paisa Reality</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../shared/js/audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
