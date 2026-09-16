@@ -19,7 +19,7 @@ const CHARACTER_DEFAULTS = {
 
 // Dynamic config getter to auto-reload .env changes without server restarts
 function getEnvConfig() {
-  require('dotenv').config();
+  require('dotenv').config({ override: true });
   const apiKey = process.env.ELEVENLABS_API_KEY;
   const isConfigured = !!(apiKey && apiKey !== 'your_elevenlabs_api_key_here' && apiKey.trim() !== '');
   return {
@@ -87,11 +87,17 @@ app.post('/api/tts', async (req, res) => {
     }
 
     let response = await requestElevenLabs(targetVoiceId);
+    let usedFallback = false;
+    let fallbackReason = '';
 
     // If custom voice returned 402 (Community Library voice requiring paid plan) or 404,
     // automatically fall back to the character's guaranteed free premade voice!
     if (!response.ok && (response.status === 402 || response.status === 404) && targetVoiceId !== fallbackVoiceId) {
-      console.warn(`[ElevenLabs Notice]: Voice "${targetVoiceId}" returned ${response.status} (Library voice requires paid plan). Automatically streaming with fallback voice "${fallbackVoiceId}"!`);
+      usedFallback = true;
+      fallbackReason = response.status === 402 
+        ? 'Library voice requires paid plan (402). Playing default voice.'
+        : 'Voice ID not found (404). Playing default voice.';
+      console.warn(`[ElevenLabs Notice]: Voice "${targetVoiceId}" returned ${response.status} (${fallbackReason}). Automatically streaming with fallback voice "${fallbackVoiceId}"!`);
       response = await requestElevenLabs(fallbackVoiceId);
     }
 
@@ -113,6 +119,10 @@ app.post('/api/tts', async (req, res) => {
     // Stream audio binary directly back to client
     res.setHeader('Content-Type', 'audio/mpeg');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    if (usedFallback) {
+      res.setHeader('X-Voice-Fallback', 'true');
+      res.setHeader('X-Voice-Reason', fallbackReason);
+    }
 
     const stream = Readable.fromWeb(response.body);
     stream.on('error', (err) => {

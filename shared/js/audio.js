@@ -577,7 +577,12 @@ async function playVoice(text, character = 'hondu') {
       }
     };
 
-    showAudioToast(`⚡ Playing ElevenLabs HD (${character.toUpperCase()})`, 'success');
+    const isFallbackVoice = response.headers.get('X-Voice-Fallback') === 'true';
+    if (isFallbackVoice) {
+      showAudioToast(`⚠️ Voice ID requires ElevenLabs paid plan (402). Using default voice!`, 'warning');
+    } else {
+      showAudioToast(`⚡ Playing ElevenLabs HD (${character.toUpperCase()})`, 'success');
+    }
     await audio.play();
   } catch (err) {
     if (err.name === 'AbortError') {

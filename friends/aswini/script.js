@@ -232,186 +232,195 @@ function coinGameLoop() {
     
     const dist = Math.hypot(itemCenterX - playerCenterX, itemCenterY - playerCenterY);
     
-    if (dist < playerRadius + 22) {
-      totalPaisaSaved += item.data.points;
-      const scoreEl = document.getElementById('coinGameScore');
-      if (scoreEl) {
-        scoreEl.textContent = `₹${totalPaisaSaved.toFixed(2)}`;
-        scoreEl.style.color = totalPaisaSaved >= 0 ? '#10b981' : '#ff416c';
+      if (dist < playerRadius + 22) {
+        totalPaisaSaved += item.data.points;
+        const scoreEl = document.getElementById('coinGameScore');
+        if (scoreEl) {
+          scoreEl.textContent = `₹${totalPaisaSaved.toFixed(2)}`;
+          scoreEl.style.color = totalPaisaSaved >= 0 ? '#10b981' : '#ff416c';
+        }
+        
+        updatePaisaTier(totalPaisaSaved);
+        showCoinCatchEffect(itemCenterX, itemCenterY, item.data);
+        
+        if (item.data.type === 'good') {
+          if (item.data.sound === 'chaching' && typeof playChaChing === 'function') {
+            playChaChing();
+          } else if (typeof playCoin === 'function') {
+            playCoin();
+          }
+          if (player) {
+            player.classList.add('saving');
+            setTimeout(() => player.classList.remove('saving'), 180);
+          }
+        } else {
+          if (typeof playMegaphone === 'function') playMegaphone();
+          if (player) {
+            player.classList.add('stung');
+            setTimeout(() => player.classList.remove('stung'), 250);
+          }
+        }
+        
+        item.el.remove();
+        coinItems.splice(i, 1);
+        continue;
       }
       
-      showCoinCatchEffect(itemCenterX, itemCenterY, item.data);
-      
-      if (item.data.type === 'good') {
-        if (item.data.sound === 'chaching' && typeof playChaChing === 'function') {
-          playChaChing();
-        } else if (typeof playCoin === 'function') {
-          playCoin();
-        }
-        if (player) {
-          player.classList.add('saving');
-          setTimeout(() => player.classList.remove('saving'), 180);
-        }
-      } else {
-        if (typeof playMegaphone === 'function') playMegaphone();
-        if (player) {
-          player.classList.add('stung');
-          setTimeout(() => player.classList.remove('stung'), 250);
-        }
+      if (item.y > boardRect.height + 30) {
+        item.el.remove();
+        coinItems.splice(i, 1);
       }
-      
-      item.el.remove();
-      coinItems.splice(i, 1);
-      continue;
+    }
+  }
+
+  function updatePaisaTier(score) {
+    const badge = document.getElementById('paisaTierBadge');
+    if (!badge) return;
+    if (score < 0) {
+      badge.textContent = "WEALTH TIER: 🚨 BANKRUPTCY CRISIS (Demanding ₹0.01 UPI Refund)";
+      badge.style.background = "rgba(230, 57, 70, 0.35)";
+      badge.style.borderColor = "#e63946";
+      badge.style.color = "#ff6b6b";
+    } else if (score < 1.00) {
+      badge.textContent = "WEALTH TIER: Frugal Mortal (Base 1-Paisa Mode)";
+      badge.style.background = "rgba(16, 185, 129, 0.15)";
+      badge.style.borderColor = "rgba(16, 185, 129, 0.4)";
+      badge.style.color = "#10b981";
+    } else if (score < 5.00) {
+      badge.textContent = "WEALTH TIER: 🥈 Penny Pincher Master (Auto Drivers Crying)";
+      badge.style.background = "rgba(67, 233, 123, 0.25)";
+      badge.style.borderColor = "#43e97b";
+      badge.style.color = "#43e97b";
+    } else if (score < 10.00) {
+      badge.textContent = "WEALTH TIER: 🥇 ₹0.01 Sovereign Baron (Warren Buffett Is Jealous)";
+      badge.style.background = "rgba(249, 203, 40, 0.3)";
+      badge.style.borderColor = "#f9cb28";
+      badge.style.color = "#f9cb28";
+    } else {
+      badge.textContent = "WEALTH TIER: 👑 GOD OF THE 1-PAISA COIN (Infinite Ketchup Hoard)";
+      badge.style.background = "rgba(255, 215, 0, 0.4)";
+      badge.style.borderColor = "#ffd700";
+      badge.style.color = "#ffd700";
+    }
+  }
+
+  function showCoinCatchEffect(x, y, data) {
+    const board = document.getElementById('coinGameBoard');
+    if (!board) return;
+    const floatEl = document.createElement('div');
+    floatEl.className = `catch-float ${data.type}`;
+    floatEl.textContent = data.label;
+    floatEl.style.left = `${x}px`;
+    floatEl.style.top = `${y}px`;
+    board.appendChild(floatEl);
+    setTimeout(() => floatEl.remove(), 700);
+  }
+
+  function endCoinGame() {
+    coinGameRunning = false;
+    clearInterval(coinGameInterval);
+    clearInterval(coinTimerInterval);
+    
+    const startBtn = document.getElementById('coinGameStartBtn');
+    const statusEl = document.getElementById('coinGameStatus');
+    if (startBtn) {
+      startBtn.textContent = 'Save Again';
+      startBtn.disabled = false;
+    }
+    if (statusEl) {
+      statusEl.textContent = `Shift Over! Net Wealth Preserved: ₹${totalPaisaSaved.toFixed(2)}`;
     }
     
-    if (item.y > boardRect.height + 30) {
-      item.el.remove();
-      coinItems.splice(i, 1);
+    if (typeof playChaChing === 'function') playChaChing();
+    setTimeout(() => {
+      triggerAswiniPrankModal();
+    }, 450);
+  }
+
+  function triggerAswiniPrankModal() {
+    const modal = document.getElementById('aswiniPrankModal');
+    const scoreDisp = document.getElementById('aswiniPrankScore');
+    const roastDisp = document.getElementById('aswiniPrankRoast');
+    
+    if (modal) {
+      modal.classList.add('active');
+      if (scoreDisp) scoreDisp.textContent = `₹${totalPaisaSaved.toFixed(2)} Secured in Secret Locker!`;
+      const randomRoast = BANKRUPTCY_ROASTS[Math.floor(Math.random() * BANKRUPTCY_ROASTS.length)];
+      if (roastDisp) roastDisp.textContent = `"${randomRoast}"`;
+      if (typeof spawnConfetti === 'function') spawnConfetti(35);
     }
   }
-}
 
-function showCoinCatchEffect(x, y, data) {
-  const board = document.getElementById('coinGameBoard');
-  if (!board) return;
-  const floatEl = document.createElement('div');
-  floatEl.className = `catch-float ${data.type}`;
-  floatEl.textContent = data.label;
-  floatEl.style.left = `${x}px`;
-  floatEl.style.top = `${y}px`;
-  board.appendChild(floatEl);
-  setTimeout(() => floatEl.remove(), 700);
-}
-
-function endCoinGame() {
-  coinGameRunning = false;
-  clearInterval(coinGameInterval);
-  clearInterval(coinTimerInterval);
-  
-  const startBtn = document.getElementById('coinGameStartBtn');
-  const statusEl = document.getElementById('coinGameStatus');
-  if (startBtn) {
-    startBtn.textContent = 'Save Again';
-    startBtn.disabled = false;
+  function closeAswiniPrank() {
+    const modal = document.getElementById('aswiniPrankModal');
+    if (modal) modal.classList.remove('active');
   }
-  if (statusEl) {
-    statusEl.textContent = `Shift Over! Net Wealth Preserved: ₹${totalPaisaSaved.toFixed(2)}`;
+
+  // 🧮 1-PAISA SAVINGS CALCULATOR LOGIC
+  function calculateSavings() {
+    const km = parseFloat(document.getElementById('calcKm')?.value || 0);
+    const packets = parseFloat(document.getElementById('calcPackets')?.value || 0);
+    const splits = parseFloat(document.getElementById('calcSplits')?.value || 0);
+    const fans = parseFloat(document.getElementById('calcFans')?.value || 0);
+
+    const total = (km * 2.5) + (packets * 0.5) + (splits * 0.33) + (fans * 1.5);
+    const coinsCount = Math.round(total * 100);
+
+    const resultEl = document.getElementById('calcTotalResult');
+    const subtextEl = document.getElementById('calcTotalSubtext');
+
+    if (resultEl) resultEl.textContent = `₹${total.toFixed(2)}`;
+    if (subtextEl) {
+      subtextEl.textContent = `Equivalent to ${coinsCount.toLocaleString()} one-paisa copper coins stored under Aswini's pillow.`;
+    }
   }
-  
-  if (typeof playChaChing === 'function') playChaChing();
-  setTimeout(() => {
-    triggerAswiniPrankModal();
-  }, 450);
-}
 
-function triggerAswiniPrankModal() {
-  const modal = document.getElementById('aswiniPrankModal');
-  const scoreDisp = document.getElementById('aswiniPrankScore');
-  const roastDisp = document.getElementById('aswiniPrankRoast');
-  
-  if (modal) {
-    modal.classList.add('active');
-    if (scoreDisp) scoreDisp.textContent = `₹${totalPaisaSaved.toFixed(2)} Secured in Secret Locker!`;
-    const randomRoast = BANKRUPTCY_ROASTS[Math.floor(Math.random() * BANKRUPTCY_ROASTS.length)];
-    if (roastDisp) roastDisp.textContent = `"${randomRoast}"`;
-    if (typeof spawnConfetti === 'function') spawnConfetti(35);
-  }
-}
+  // Controls & Initialization
+  document.addEventListener('DOMContentLoaded', () => {
+    generateAswiniRoast();
+    updateDecibelSlider(145);
+    calculateSavings();
+    
+    const board = document.getElementById('coinGameBoard');
+    const player = document.getElementById('aswiniPlayer');
+    
+    if (board && player) {
+      const handleMove = (clientX) => {
+        const rect = board.getBoundingClientRect();
+        let relX = ((clientX - rect.left) / rect.width) * 100;
+        relX = Math.max(6, Math.min(94, relX));
+        aswiniX = relX;
+        player.style.left = `${aswiniX}%`;
+      };
+      
+      board.addEventListener('mousemove', (e) => {
+        if (coinGameRunning) handleMove(e.clientX);
+      });
 
-function closeAswiniPrank() {
-  const modal = document.getElementById('aswiniPrankModal');
-  if (modal) modal.classList.remove('active');
-}
-
-// 🧮 1-PAISA SAVINGS CALCULATOR LOGIC
-const SAVINGS_ITEMS = [
-  { id: 'calc-1', saved: 25.00, desc: 'Walked 7km instead of sharing an auto-rickshaw' },
-  { id: 'calc-2', saved: 4.50, desc: 'Took 45 extra napkins and 10 sauce sachets' },
-  { id: 'calc-3', saved: 0.02, desc: 'Cut phone call in 1 ring so friend calls back' },
-  { id: 'calc-4', saved: 2.00, desc: 'Bargained 45 minutes for free coriander (dhaniya)' },
-  { id: 'calc-5', saved: 0.33, desc: 'Demanded 33 paise back via UPI for cutting chai' },
-  { id: 'calc-6', saved: 15.00, desc: 'Searched 9 coupon apps before buying a ₹20 item' }
-];
-
-let selectedSavings = new Set(['calc-1', 'calc-2', 'calc-5']);
-
-function toggleSavingsItem(id) {
-  if (selectedSavings.has(id)) {
-    selectedSavings.delete(id);
-    if (typeof playBoing === 'function') playBoing();
-  } else {
-    selectedSavings.add(id);
-    if (typeof playCoin === 'function') playCoin();
-  }
-  
-  const card = document.getElementById(id);
-  if (card) card.classList.toggle('active', selectedSavings.has(id));
-  
-  calculateTotalSavings();
-}
-
-function calculateTotalSavings() {
-  let total = 0;
-  SAVINGS_ITEMS.forEach(item => {
-    if (selectedSavings.has(item.id)) {
-      total += item.saved;
+      window.addEventListener('mousemove', (e) => {
+        if (!coinGameRunning) return;
+        const rect = board.getBoundingClientRect();
+        if (e.clientY >= rect.top - 60 && e.clientY <= rect.bottom + 60) {
+          handleMove(e.clientX);
+        }
+      });
+      
+      board.addEventListener('touchmove', (e) => {
+        if (coinGameRunning && e.touches.length > 0) {
+          e.preventDefault();
+          handleMove(e.touches[0].clientX);
+        }
+      }, { passive: false });
+      
+      window.addEventListener('keydown', (e) => {
+        if (!coinGameRunning) return;
+        if (e.key === 'ArrowLeft') {
+          aswiniX = Math.max(6, aswiniX - 6);
+          player.style.left = `${aswiniX}%`;
+        } else if (e.key === 'ArrowRight') {
+          aswiniX = Math.min(94, aswiniX + 6);
+          player.style.left = `${aswiniX}%`;
+        }
+      });
     }
   });
-  
-  const totalEl = document.getElementById('calcTotalNumber');
-  const verdictEl = document.getElementById('calcVerdict');
-  
-  if (totalEl) totalEl.textContent = `₹${total.toFixed(2)}`;
-  
-  if (verdictEl) {
-    if (total > 40) {
-      verdictEl.textContent = "🏆 TIER: GOD OF WEALTH PRESERVATION (Warren Buffett is taking notes)";
-    } else if (total > 15) {
-      verdictEl.textContent = "🥇 TIER: ADVANCED STINGINESS (Auto drivers are crying in despair)";
-    } else {
-      verdictEl.textContent = "🥈 TIER: APPRENTICE PENNY PINCHER (Keep walking, save that auto fare!)";
-    }
-  }
-}
-
-// Controls & Initialization
-document.addEventListener('DOMContentLoaded', () => {
-  generateAswiniRoast();
-  updateDecibelSlider(145);
-  calculateTotalSavings();
-  
-  const board = document.getElementById('coinGameBoard');
-  const player = document.getElementById('aswiniPlayer');
-  
-  if (board && player) {
-    const handleMove = (clientX) => {
-      const rect = board.getBoundingClientRect();
-      let relX = ((clientX - rect.left) / rect.width) * 100;
-      relX = Math.max(6, Math.min(94, relX));
-      aswiniX = relX;
-      player.style.left = `${aswiniX}%`;
-    };
-    
-    board.addEventListener('mousemove', (e) => {
-      if (coinGameRunning) handleMove(e.clientX);
-    });
-    
-    board.addEventListener('touchmove', (e) => {
-      if (coinGameRunning && e.touches.length > 0) {
-        handleMove(e.touches[0].clientX);
-      }
-    }, { passive: true });
-    
-    window.addEventListener('keydown', (e) => {
-      if (!coinGameRunning) return;
-      if (e.key === 'ArrowLeft') {
-        aswiniX = Math.max(6, aswiniX - 5);
-        player.style.left = `${aswiniX}%`;
-      } else if (e.key === 'ArrowRight') {
-        aswiniX = Math.min(94, aswiniX + 5);
-        player.style.left = `${aswiniX}%`;
-      }
-    });
-  }
-});
