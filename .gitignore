@@ -49,4 +49,4 @@ desktop.ini
 .cache/
 tmp/
 temp/
-SESSION_CONTEXT.md
+SESSION_CONTEXT*.md
