@@ -4,9 +4,9 @@
 
 # 1. Secrets & Environment Variables (CRITICAL)
 # Never push actual API keys to GitHub
-#.env
-#.env*.local
-#*.env
+.env
+.env*.local
+*.env
 
 # Allow the example template so others know which keys are needed
 .env.example
